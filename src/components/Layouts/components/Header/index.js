@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faMagnifyingGlass, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 // import 'tippy.js/dist/tippy.css'; // optional
 
@@ -9,6 +9,7 @@ import styles from './Header.module.scss';
 import image from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +18,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1,2,3]);
+            setSearchResult([1, 2, 3]);
         }, 0)
     }, []);
 
@@ -27,7 +28,7 @@ function Header() {
                 <div className={cx('logo')}>
                     <img src={image.logo} alt='Logo Tiktok' />
                 </div>
-                <Tippy 
+                <Tippy
                     interactive
                     visible={searchResult.length > 0}
                     render={attrs => (
@@ -57,7 +58,8 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <h2>Action</h2>
+                    <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>Upload</Button>
+                    <Button primary disabled>Login</Button>
                 </div>
             </div>
         </header>
