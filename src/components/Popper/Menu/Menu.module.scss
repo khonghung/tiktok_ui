@@ -1,7 +1,24 @@
 .menu-list {
     width: 224px;
+}
 
-    .menu-item {
-        
+.menu-item {
+    font-size: 1.6rem;
+    font-weight: 600;
+    min-width: 100px;
+    padding: 9px 16px;
+    line-height: 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid transparent;
+    user-select: none;
+    display: inline-flex;
+    width: 100%;
+    justify-content: flex-start;
+
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
     }
 }
