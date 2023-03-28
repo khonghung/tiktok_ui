@@ -108,4 +108,13 @@
         padding: 4px 8px;
         background-color: white;
     }
+
+    .user-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        object-fit: cover;
+        margin-left: 24px;
+    }
 }
