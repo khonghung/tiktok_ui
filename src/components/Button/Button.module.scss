@@ -9,6 +9,7 @@
     background-color: white;
     border: 1px solid transparent;
     user-select: none;
+    align-items: center;
 
     + .wrapper {
         margin-left: 16px;
@@ -23,6 +24,7 @@
 .icon + .title,
 .title + .icon {
     margin-left: 8px;
+    font-family: 'ProximaNova', sans-serif;
 }
 
 .icon {

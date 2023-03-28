@@ -10,7 +10,6 @@ import {
     faKeyboard,
     faLanguage,
     faMagnifyingGlass,
-    faPlus,
     faSignOut,
     faSpinner,
     faUser
@@ -24,6 +23,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 // import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { PlusIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -136,18 +137,22 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <div className={cx('current-user')}>
-                            <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>Upload</Button>
+                            <Button text leftIcon={<PlusIcon />}>Upload</Button>
                         </div>
                     ) : (
                         <>
-                            <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>Upload</Button>
+                            <Button text leftIcon={<PlusIcon />}>Upload</Button>
                             <Button primary>Login</Button>
                         </>
                     )}
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img className={cx('user-avatar')} src='https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png' alt='HungKM' />
+                            <Image
+                                className={cx('user-avatar')}
+                                src='https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png'
+                                alt='HungKM'
+                            />
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} />
