@@ -43,7 +43,7 @@ function Search() {
             setLoading(false);
         }
         fetchApi();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [debounce]);
 
     const handleClear = () => {
@@ -56,6 +56,13 @@ function Search() {
         setShowResult(false);
     }
 
+    const handleChange = (e) => {
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
+        }
+    };
+
     return (
         <Tippy
             interactive
@@ -65,7 +72,7 @@ function Search() {
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <h4 className={cx('search-title')}>Accounts</h4>
                         {searchResult.map((result) => (
-                            <AccountItem key={result.id} data={result}/>
+                            <AccountItem key={result.id} data={result} />
                         ))}
                     </div>
                 </PopperWrapper>
@@ -78,10 +85,10 @@ function Search() {
                     value={searchValue}
                     placeholder='Search'
                     spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={handleChange}
                     onClick={() => { setShowResult(true) }}
                 />
-                {!!searchValue && !loading && ( 
+                {!!searchValue && !loading && (
                     <button className={cx('clear')} onClick={handleClear}>
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
@@ -89,7 +96,7 @@ function Search() {
 
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => {e.preventDefault()}}>
                     <SearchIcon />
                 </button>
             </div>

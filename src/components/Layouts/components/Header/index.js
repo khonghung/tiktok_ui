@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faBitcoinSign,
@@ -19,6 +20,7 @@ import Image from '~/components/Image';
 import Search from '~/components/Layouts/components/Search';
 import { PlusIcon } from '~/components/Icons';
 import image from '~/assets/images';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -93,7 +95,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={image.logo} alt='Logo Tiktok' />
+                    <Link to={routesConfig.home}><img src={image.logo} alt='Logo Tiktok' /></Link>
                 </div>
 
                 <Search />

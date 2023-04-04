@@ -24,7 +24,7 @@
 .icon + .title,
 .title + .icon {
     margin-left: 8px;
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-family);
 }
 
 .icon {
