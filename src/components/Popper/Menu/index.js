@@ -42,11 +42,11 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                         {history.length > 1 && <Header title='Language' onBack={() => {
                             setHistory((prev) => prev.slice(0, prev.length - 1))
                         }} />}
-                        {renderItem()}
+                        <div className={cx('menu-scroll')}>{renderItem()}</div>
                     </PopperWrapper>
                 </div>
             )}
-            onHide={()=> setHistory(prev => prev.slice(0, 1))}
+            onHide={() => setHistory(prev => prev.slice(0, 1))}
         >
             {children}
         </Tippy>

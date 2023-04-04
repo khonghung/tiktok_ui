@@ -66,6 +66,7 @@ function Search() {
     return (
         <Tippy
             interactive
+            appendTo={() => document.body}
             visible={showResult && searchResult.length > 0}
             render={attrs => (
                 <PopperWrapper>

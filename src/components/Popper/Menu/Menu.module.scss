@@ -3,6 +3,10 @@
     width: 224px;
 }
 
+.menu-scroll {
+    overflow-y: auto;
+}
+
 .menu-item {
     font-size: 1.6rem;
     font-weight: 600;
@@ -35,6 +39,7 @@
     position: relative;
     height: 50px;
     margin-top: -8px;
+    flex-shrink: 0;
 }
 
 .back-btn {

@@ -10,7 +10,6 @@ root.render(
   <React.StrictMode>
     <GlobalStyles>
       <App />
-      <Favicon url="https://seeklogo.com//images/T/tiktok-app-icon-logo-0F5AD7AE01-seeklogo.com.png" />
     </GlobalStyles>
   </React.StrictMode>
 );
