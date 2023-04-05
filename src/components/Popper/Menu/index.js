@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -9,7 +10,7 @@ import Header from './Header';
 
 const cx = classNames.bind(styles);
 
-const defaultFn = () => {};
+const defaultFn = () => { };
 
 function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
 
@@ -39,9 +40,14 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             render={attrs => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper>
-                        {history.length > 1 && <Header title='Language' onBack={() => {
-                            setHistory((prev) => prev.slice(0, prev.length - 1))
-                        }} />}
+                        {history.length > 1 && (
+                            <Header
+                                title={current.title}
+                                onBack={() => {
+                                    setHistory((prev) => prev.slice(0, prev.length - 1))
+                                }}
+                            />
+                        )}
                         <div className={cx('menu-scroll')}>{renderItem()}</div>
                     </PopperWrapper>
                 </div>
@@ -51,6 +57,13 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             {children}
         </Tippy>
     );
+}
+
+Menu.prototype = {
+    children: PropTypes.node.isRequired,
+    items: PropTypes.array,
+    hideOnClick: PropTypes.bool,
+    onChange: PropTypes.func,
 }
 
 export default Menu;
