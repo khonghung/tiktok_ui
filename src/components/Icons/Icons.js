@@ -130,7 +130,7 @@ export const LiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => 
         className={className}
         width={width}
         height={height}
-        viewBox="4 0 30 30"
+        viewBox="4 2 28 30"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -152,7 +152,7 @@ export const LiveActiveIcon = ({ width = '3.2rem', height = '3.2rem', className 
         className={className}
         width={width}
         height={height}
-        viewBox="5 0 45 43"
+        viewBox="5 3 45 43"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
     >
