@@ -16,6 +16,7 @@ function Button({
     small = false,
     large = false,
     children,
+    className,
     leftIcon,
     rightIcon,
     onClick,
@@ -28,6 +29,7 @@ function Button({
         ...passProps
     };
     const classes = cx('wrapper', {
+        [className]: className,
         primary,
         outline,
         text,
